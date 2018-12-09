@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MoviesListComponent } from './movies/movies-list/movies-list.component';
@@ -8,6 +9,7 @@ import { MoviesItemComponent } from './movies/movies-list/movies-item/movies-ite
 import { HomeComponent } from './home/home.component';
 import { MoviesComponent } from './movies/movies.component';
 import { AppRoutingModule } from './app-routing.module';
+import { MoviesNewComponent } from './movies/movies-new/movies-new.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,14 @@ import { AppRoutingModule } from './app-routing.module';
     MoviesListComponent,
     MoviesItemComponent,
     HomeComponent,
-    MoviesComponent
+    MoviesComponent,
+    MoviesNewComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
