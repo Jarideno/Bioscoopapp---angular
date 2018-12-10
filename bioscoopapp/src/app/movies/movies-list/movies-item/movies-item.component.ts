@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Movie } from '../../../../shared/movie.model';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-movies-item',
@@ -11,16 +12,16 @@ export class MoviesItemComponent implements OnInit {
   @Input() movie: Movie;
   @Input() index: Number;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private moviesService: MoviesService, private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
 
   onEditMovie(){
-    this.router.navigate(['movies/edit/' + this.movie._id]);
+    this.router.navigateByUrl('movies/edit/' + this.movie._id);
   }
 
   onDeleteMovie(){
-    //http DELETE request with this.movie._id
+    this.router.navigateByUrl('movies/delete/' + this.movie._id);
   }
 }

@@ -7,20 +7,9 @@ import { map, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class MoviesService {
-    // movie: Movie = new Movie("Sherlock Holmes 1","Detective Sherlock Holmes and his stalwart partner Watson engage in a battle of wits and brawn with a nemesis whose plot is a threat to all of England.","Guy Ritchie","Michael Robert Johnson, Anthony Peckham",7.6,128, "1");
-    // movie2: Movie = new Movie("Sherlock Holmes 2: A game of shadows","Sherlock Holmes and his sidekick Dr. Watson join forces to outwit and bring down their fiercest adversary, Professor Moriarty.","Guy Ritchie","Michael Robert Johnson, Anthony Peckham",7.5,129, "2");
-    // movie3: Movie = new Movie("Sherlock Holmes 1","Detective Sherlock Holmes and his stalwart partner Watson engage in a battle of wits and brawn with a nemesis whose plot is a threat to all of England.","Guy Ritchie","Michael Robert Johnson, Anthony Peckham",7.6,128, "3");
-    // movie4: Movie = new Movie("Sherlock Holmes 1","Detective Sherlock Holmes and his stalwart partner Watson engage in a battle of wits and brawn with a nemesis whose plot is a threat to all of England.","Guy Ritchie","Michael Robert Johnson, Anthony Peckham",7.6,128, "4");
     movies: Movie[] = [];
 
-    constructor(private http: Http){
-
-    }
-
-
-    addMovie(title: string, description: string, director: string, writers: string, imdbScore: number, length: number){
-        this.movies.push(new Movie(title, description, director, writers, imdbScore, length));
-    }
+    constructor(private http: Http){}
 
     getMovies() {
         return this.http.get('http://localhost:3000/api/movie')
@@ -34,8 +23,26 @@ export class MoviesService {
             (error: Response) => {
               return Observable.throw('Something went wrong');
             }
-          ));
-      }
+        ));
+    }
+
+    postMovies(title: string, description: string, director: string, writers: string, imdbScore: number, length: number) {
+    let movie = new Movie(title, description, director, writers, imdbScore, length);
+    const headers = new Headers({'Content-Type': 'application/json'});
+    return this.http.post('http://localhost:3000/api/movie', movie, {headers: headers});
+    }
+
+    putMovies(title: string, description: string, director: string, writers: string, imdbScore: number, length: number, id: string) {
+        let movie = new Movie(title, description, director, writers, imdbScore, length);
+        const headers = new Headers({'Content-Type': 'application/json'});
+        console.log(id);
+        return this.http.put('http://localhost:3000/api/movie/' + id, movie, {headers: headers});
+    }
+
+    deleteMovie(id: string){
+      console.log(id);
+      return this.http.delete('http://localhost:3000/api/movie/' + id);
+    }
 }
 
 

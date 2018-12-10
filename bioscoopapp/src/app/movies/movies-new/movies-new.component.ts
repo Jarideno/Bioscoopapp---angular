@@ -21,13 +21,14 @@ export class MoviesNewComponent implements OnInit {
 
   onMovieCreate(){
     console.log(this.model);
-    this.moviesService.addMovie(this.model.title, 
+    this.moviesService.postMovies(this.model.title, 
       this.model.description, 
       this.model.director, 
       this.model.writers, 
       this.model.imdbScore, 
-      this.model.length);
-
-      this.router.navigate(['movies']);
+      this.model.length)
+      .subscribe((response) => console.log(response), (error) => console.log(error), () => {
+        this.router.navigate(["movies"]);
+      });
   }
 }

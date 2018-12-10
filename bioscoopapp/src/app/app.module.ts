@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MoviesNewComponent } from './movies/movies-new/movies-new.component';
 import { MoviesEditComponent } from './movies/movies-edit/movies-edit.component';
 import { HttpModule } from '@angular/http';
+import { MoviesDeleteComponent } from './movies/movies-delete/movies-delete.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpModule } from '@angular/http';
     HomeComponent,
     MoviesComponent,
     MoviesNewComponent,
-    MoviesEditComponent
+    MoviesEditComponent,
+    MoviesDeleteComponent
   ],
   imports: [
     BrowserModule,

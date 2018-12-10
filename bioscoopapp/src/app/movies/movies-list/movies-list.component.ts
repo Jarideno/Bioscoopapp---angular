@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, AfterViewChecked, DoCheck } from '@angular/core';
 import { Movie } from 'src/shared/movie.model';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MoviesService } from 'src/app/services/movies.service';
@@ -16,7 +16,7 @@ export class MoviesListComponent implements OnInit {
               private moviesService: MoviesService) { }
 
   ngOnInit() {
-    //this.movies = this.moviesService.movies;
+    console.log("ngoninit called")
     this.moviesService.getMovies()
     .subscribe(
       (movies: any[]) => this.movies = movies,
