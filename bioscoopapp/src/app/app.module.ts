@@ -11,6 +11,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MoviesNewComponent } from './movies/movies-new/movies-new.component';
 import { MoviesEditComponent } from './movies/movies-edit/movies-edit.component';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MoviesEditComponent } from './movies/movies-edit/movies-edit.component'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -16,7 +16,12 @@ export class MoviesListComponent implements OnInit {
               private moviesService: MoviesService) { }
 
   ngOnInit() {
-    this.movies = this.moviesService.movies;
+    //this.movies = this.moviesService.movies;
+    this.moviesService.getMovies()
+    .subscribe(
+      (movies: any[]) => this.movies = movies,
+      (error) => console.log(error)
+    )
   }
 
   onNewMovie(){
