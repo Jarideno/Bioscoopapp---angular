@@ -1,8 +1,10 @@
-<a
+<span
   style="cursor: pointer;"
   [routerLink]="[index]"
   routerLinkActive="active"
   class="list-group-item clearfix">
+    <button class="btn btn-danger" (click)="onDeleteMovie()">Delete movie</button>
+    <button class="btn btn-primary" (click)="onEditMovie()">Edit movie</button>
     <h4 class="list-group-item-heading">{{ movie.title }}</h4>
     <p class="bold">Description: </p>
     <p class="list-group-item-text">{{ movie.description }}</p>
@@ -14,4 +16,4 @@
     <p class="list-group-item-text">{{ movie.imdbScore }}</p>
     <p class="bold">Movie length: </p>
     <p class="list-group-item-text">{{ movie.length }} minutes</p>
-</a>
+</span>

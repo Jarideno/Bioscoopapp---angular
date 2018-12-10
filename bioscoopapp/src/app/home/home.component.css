@@ -1,0 +1,8 @@
+.backgroundimg {
+    background-image: url('http://www.pgagarchitects.com/images/projects/entertainment/home-theatre/pgag-architects1.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 90vh;
+    width: 100%;
+}

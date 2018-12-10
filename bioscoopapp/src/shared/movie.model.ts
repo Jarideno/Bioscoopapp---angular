@@ -4,6 +4,7 @@ export class Movie {
         public director:String,
         public writers:String,
         public imdbScore:Number,
-        public length:Number){
+        public length:Number,
+        public _id?: String){
     }
 }

@@ -7,3 +7,13 @@
 h4 {
     font-weight: bold;
 }
+
+.btn-primary {
+    float: right;
+    margin: 2px;
+}
+
+.btn-danger {
+    float: right;
+    margin: 2px;
+}

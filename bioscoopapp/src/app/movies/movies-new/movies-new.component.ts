@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MoviesService } from 'src/app/services/movies.service';
+import { Router } from '@angular/router';
 //import { Movie } from '../../../shared/movie.model';
 
 
@@ -11,13 +13,21 @@ import { NgForm } from '@angular/forms';
 export class MoviesNewComponent implements OnInit {
 
   model: any =  {};
-  constructor() { }
+  constructor(private moviesService: MoviesService,
+    private router: Router) { }
 
   ngOnInit() {
   }
 
   onMovieCreate(){
-    console.log(JSON.stringify(this.model));
-    //movie: Movie = new Movie("", "", "", "", 1,1);
+    console.log(this.model);
+    this.moviesService.addMovie(this.model.title, 
+      this.model.description, 
+      this.model.director, 
+      this.model.writers, 
+      this.model.imdbScore, 
+      this.model.length);
+
+      this.router.navigate(['movies']);
   }
 }
