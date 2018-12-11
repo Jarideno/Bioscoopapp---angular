@@ -13,6 +13,12 @@ import { MoviesNewComponent } from './movies/movies-new/movies-new.component';
 import { MoviesEditComponent } from './movies/movies-edit/movies-edit.component';
 import { HttpModule } from '@angular/http';
 import { MoviesDeleteComponent } from './movies/movies-delete/movies-delete.component';
+import { RoomsComponent } from './rooms/rooms.component';
+import { RoomsDeleteComponent } from './rooms/rooms-delete/rooms-delete.component';
+import { RoomsEditComponent } from './rooms/rooms-edit/rooms-edit.component';
+import { RoomsListComponent } from './rooms/rooms-list/rooms-list.component';
+import { RoomsNewComponent } from './rooms/rooms-new/rooms-new.component';
+import { RoomsItemComponent } from './rooms/rooms-list/rooms-item/rooms-item.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +30,13 @@ import { MoviesDeleteComponent } from './movies/movies-delete/movies-delete.comp
     MoviesComponent,
     MoviesNewComponent,
     MoviesEditComponent,
-    MoviesDeleteComponent
+    MoviesDeleteComponent,
+    RoomsComponent,
+    RoomsDeleteComponent,
+    RoomsEditComponent,
+    RoomsListComponent,
+    RoomsNewComponent,
+    RoomsItemComponent
   ],
   imports: [
     BrowserModule,

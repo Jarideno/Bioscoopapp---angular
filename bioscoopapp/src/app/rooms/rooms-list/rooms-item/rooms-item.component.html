@@ -1,0 +1,12 @@
+<span
+  style="cursor: pointer;"
+  [routerLink]="[index]"
+  routerLinkActive="active"
+  class="list-group-item clearfix">
+    <button class="btn btn-danger" (click)="onDeleteRoom()">Delete room</button>
+    <button class="btn btn-primary" (click)="onEditRoom()">Edit room</button>
+    <p class="bold">Room number: </p>
+    <p class="list-group-item-text">{{ room.roomNumber }}</p>
+    <p class="bold">Seats: </p>
+    <p class="list-group-item-text">{{ room.seats }}</p>
+</span>

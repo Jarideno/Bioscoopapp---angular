@@ -7,7 +7,7 @@ import { MoviesService } from '../services/movies.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private movieService: MoviesService) { }
+  constructor() { }
 
   ngOnInit() {
   }

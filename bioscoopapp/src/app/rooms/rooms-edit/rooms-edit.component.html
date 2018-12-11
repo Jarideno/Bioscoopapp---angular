@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-md-6 col-md-push-3">
+        <form name="form" #editRoomForm="ngForm" (ngSubmit)="onRoomEdit()">
+            <div class="form-group">
+              <label for="exampleInputRoomNumber1">Room number</label>
+              <input type="text" class="form-control" id="exampleInputRoomNumber1" placeholder="Room number" [(ngModel)]="model.roomNumber" #roomNumber="ngModel" name="roomNumber">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputSeats">Seats</label>
+              <input type="text" class="form-control" id="exampleInputSeats" placeholder="Seats" [(ngModel)]="model.seats" #seats="ngModel" name="seats">
+            </div>
+            <button class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+  </div>
