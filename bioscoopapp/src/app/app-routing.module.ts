@@ -17,24 +17,29 @@ import { ShowsNewComponent } from './shows/shows-new/shows-new.component';
 import { ShowsEditComponent } from './shows/shows-edit/shows-edit.component';
 import { ShowsDeleteComponent } from './shows/shows-delete/shows-delete.component';
 import { ShowsDetailsComponent } from './shows/shows-details/shows-details.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from './services/auth.guard';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'movies', component: MoviesComponent},
-  { path: 'movies/new', component: MoviesNewComponent},
-  { path: 'movies/edit/:id', component: MoviesEditComponent},
-  { path: 'movies/delete/:id', component: MoviesDeleteComponent},
-  { path: 'movies/details/:id', component: MoviesDetailsComponent},
-  { path: 'rooms', component: RoomsComponent},
-  { path: 'rooms/new', component: RoomsNewComponent},
-  { path: 'rooms/edit/:id', component: RoomsEditComponent},
-  { path: 'rooms/delete/:id', component: RoomsDeleteComponent},
-  { path: 'rooms/details/:id', component: RoomsDetailsComponent},
-  { path: 'shows', component: ShowsComponent},
-  { path: 'shows/new', component: ShowsNewComponent},
-  { path: 'shows/edit/:id', component: ShowsEditComponent},
-  { path: 'shows/delete/:id', component: ShowsDeleteComponent},
-  { path: 'shows/details/:id', component: ShowsDetailsComponent},
+  { path: 'login', component: LoginComponent},
+  { path: 'register', canActivate: [AuthGuard], component: RegisterComponent},
+  { path: 'movies', canActivate: [AuthGuard], component: MoviesComponent},
+  { path: 'movies/new', canActivate: [AuthGuard], component: MoviesNewComponent},
+  { path: 'movies/edit/:id', canActivate: [AuthGuard], component: MoviesEditComponent},
+  { path: 'movies/delete/:id', canActivate: [AuthGuard], component: MoviesDeleteComponent},
+  { path: 'movies/details/:id', canActivate: [AuthGuard], component: MoviesDetailsComponent},
+  { path: 'rooms', canActivate: [AuthGuard], component: RoomsComponent},
+  { path: 'rooms/new', canActivate: [AuthGuard], component: RoomsNewComponent},
+  { path: 'rooms/edit/:id', canActivate: [AuthGuard], component: RoomsEditComponent},
+  { path: 'rooms/delete/:id', canActivate: [AuthGuard], component: RoomsDeleteComponent},
+  { path: 'rooms/details/:id', canActivate: [AuthGuard], component: RoomsDetailsComponent},
+  { path: 'shows', canActivate: [AuthGuard], component: ShowsComponent},
+  { path: 'shows/new', canActivate: [AuthGuard], component: ShowsNewComponent},
+  { path: 'shows/edit/:id', canActivate: [AuthGuard], component: ShowsEditComponent},
+  { path: 'shows/delete/:id', canActivate: [AuthGuard], component: ShowsDeleteComponent},
+  { path: 'shows/details/:id', canActivate: [AuthGuard], component: ShowsDetailsComponent},
 ];
 
 @NgModule({

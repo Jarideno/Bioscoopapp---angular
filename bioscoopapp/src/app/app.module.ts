@@ -28,6 +28,15 @@ import { ShowsDeleteComponent } from './shows/shows-delete/shows-delete.componen
 import { ShowsListComponent } from './shows/shows-list/shows-list.component';
 import { ShowsItemComponent } from './shows/shows-list/shows-item/shows-item.component';
 import { ShowsDetailsComponent } from './shows/shows-details/shows-details.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { MoviesService } from './services/movies.service';
+import { RoomsService } from './services/rooms.service';
+import { ShowsService } from './services/shows.service';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './services/auth.guard';
+import { HTTP_INTERCEPTORS, HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
+import { TokenInterceptorService } from './services/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -54,16 +63,24 @@ import { ShowsDetailsComponent } from './shows/shows-details/shows-details.compo
     ShowsDeleteComponent,
     ShowsListComponent,
     ShowsItemComponent,
-    ShowsDetailsComponent
+    ShowsDetailsComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [HttpClient, MoviesService, RoomsService, ShowsService, AuthService, AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
