@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-xs-12">
+      <button class="btn btn-danger" (click)="back()">Back</button>
+  </div>
+</div>
+<hr>
+<span
+  [routerLink]="[index]"
+  routerLinkActive="active"
+  class="list-group-item clearfix">
+    <h4 class="list-group-item-heading">{{ show?.movie }}</h4>
+    <p class="bold">Date: </p>
+    <p class="list-group-item-text">{{ show?.date }}</p>
+    <p class="bold">Room: </p>
+    <p class="list-group-item-text">{{ show?.room }}</p>
+</span>

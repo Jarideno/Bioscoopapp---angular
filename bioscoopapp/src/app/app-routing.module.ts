@@ -12,6 +12,11 @@ import { RoomsEditComponent } from './rooms/rooms-edit/rooms-edit.component';
 import { RoomsDeleteComponent } from './rooms/rooms-delete/rooms-delete.component';
 import { MoviesDetailsComponent } from './movies/movies-details/movies-details.component';
 import { RoomsDetailsComponent } from './rooms/rooms-details/rooms-details.component';
+import { ShowsComponent } from './shows/shows.component';
+import { ShowsNewComponent } from './shows/shows-new/shows-new.component';
+import { ShowsEditComponent } from './shows/shows-edit/shows-edit.component';
+import { ShowsDeleteComponent } from './shows/shows-delete/shows-delete.component';
+import { ShowsDetailsComponent } from './shows/shows-details/shows-details.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -24,7 +29,12 @@ const appRoutes: Routes = [
   { path: 'rooms/new', component: RoomsNewComponent},
   { path: 'rooms/edit/:id', component: RoomsEditComponent},
   { path: 'rooms/delete/:id', component: RoomsDeleteComponent},
-  { path: 'rooms/details/:id', component: RoomsDetailsComponent}
+  { path: 'rooms/details/:id', component: RoomsDetailsComponent},
+  { path: 'shows', component: ShowsComponent},
+  { path: 'shows/new', component: ShowsNewComponent},
+  { path: 'shows/edit/:id', component: ShowsEditComponent},
+  { path: 'shows/delete/:id', component: ShowsDeleteComponent},
+  { path: 'shows/details/:id', component: ShowsDetailsComponent},
 ];
 
 @NgModule({

@@ -20,4 +20,7 @@ export class MoviesDetailsComponent implements OnInit {
     (error) => console.log(error));
   }
 
+  back(){
+    this.router.navigateByUrl('movies');
+  }
 }

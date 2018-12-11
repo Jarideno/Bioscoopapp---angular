@@ -1,0 +1,19 @@
+.bold {
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-top: 2px;
+}
+
+h4 {
+    font-weight: bold;
+}
+
+.btn-primary {
+    float: right;
+    margin: 2px;
+}
+
+.btn-danger {
+    float: right;
+    margin: 2px;
+}

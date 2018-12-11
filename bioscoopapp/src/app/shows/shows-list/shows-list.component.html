@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-xs-12">
+      <button class="btn btn-success" (click)="onNewShow()">New Movie</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <app-shows-item
+      *ngFor="let showEl of shows; let i = index"
+      [show]="showEl"
+      [index]="i"
+      (click)="showShowDetails(i)">
+    </app-shows-item>
+  </div>
+</div>

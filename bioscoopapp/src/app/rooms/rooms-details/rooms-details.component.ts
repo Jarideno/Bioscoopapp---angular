@@ -20,4 +20,7 @@ export class RoomsDetailsComponent implements OnInit {
     (error) => console.log(error));
   }
 
+  back(){
+    this.router.navigateByUrl('rooms');
+  }
 }
