@@ -17,6 +17,9 @@ export class ShowsEditComponent implements OnInit {
   }
 
   onShowEdit(){
-    //put request
+    this.showsService.putShows(this.model.movie, this.model.date, this.route.snapshot.params.id)
+      .subscribe((response) => console.log(response), (error) => console.log(error), () => {
+        this.router.navigate(["shows"]);
+      });
   }
 }

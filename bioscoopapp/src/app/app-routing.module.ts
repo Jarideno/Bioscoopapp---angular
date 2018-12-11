@@ -38,7 +38,7 @@ const appRoutes: Routes = [
   { path: 'shows', canActivate: [AuthGuard], component: ShowsComponent},
   { path: 'shows/new', canActivate: [AuthGuard], component: ShowsNewComponent},
   { path: 'shows/edit/:id', canActivate: [AuthGuard], component: ShowsEditComponent},
-  { path: 'shows/delete/:id', canActivate: [AuthGuard], component: ShowsDeleteComponent},
+  { path: 'shows/delete/:id/:movie/:number', canActivate: [AuthGuard], component: ShowsDeleteComponent},
   { path: 'shows/details/:id', canActivate: [AuthGuard], component: ShowsDetailsComponent},
 ];
 

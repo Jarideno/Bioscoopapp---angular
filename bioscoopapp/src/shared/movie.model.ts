@@ -5,6 +5,6 @@ export class Movie {
         public writers:String,
         public imdbScore:Number,
         public length:Number,
-        public _id?: String){
+        public _id?: string){
     }
 }

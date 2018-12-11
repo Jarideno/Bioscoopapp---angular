@@ -41,6 +41,21 @@ export class RoomsService {
         ));
     }
 
+    getRoomByNumber(roomNumber: number){
+      return this.http.get('http://localhost:3000/api/room/number/' + roomNumber)
+          .pipe(map(
+            (response: Response) => {
+              const data = response.json();
+              return data;
+            }
+          )
+          ,catchError(
+            (error: Response) => {
+              return Observable.throw('Something went wrong');
+            }
+        ));
+    }
+
     postRooms(roomNumber: number, seats: number) {
     let room = new Room(roomNumber, seats);
     const headers = new Headers({'Content-Type': 'application/json'});

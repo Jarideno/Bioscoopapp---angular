@@ -1,3 +1,19 @@
-<p>
-  shows-new works!
-</p>
+<div class="row">
+  <div class="col-md-6 col-md-push-3">
+      <form name="form" #createShowForm="ngForm" (ngSubmit)="onShowCreate()">
+          <div class="form-group">
+            <label for="exampleMovieInput1">Movie title</label>
+            <input type="text" class="form-control" id="exampleMovieInput1" placeholder="Movie title" [(ngModel)]="model.movie" #showMovie="ngModel" name="showMovie">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputDate">Date</label>
+            <input type="text" class="form-control" id="exampleInputDate" placeholder="Date" [(ngModel)]="model.date" #date="ngModel" name="date">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputRoom">Room</label>
+            <input type="text" class="form-control" id="exampleInputRoom" placeholder="Room" [(ngModel)]="model.room" #room="ngModel" name="room">
+          </div>
+          <button class="btn btn-primary">Submit</button>
+        </form>
+  </div>
+</div>

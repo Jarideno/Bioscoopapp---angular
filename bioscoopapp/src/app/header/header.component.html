@@ -9,6 +9,8 @@
         <li style="cursor:pointer" routerLinkActive="active"><a routerLink="rooms">Rooms</a></li>
         <li style="cursor:pointer" routerLinkActive="active"><a routerLink="shows">Shows</a></li>
         <li style="cursor:pointer" routerLinkActive="active"><a routerLink="register">Add account</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
         <li style="cursor:pointer" routerLinkActive="active" *ngIf="!authService.loggedIn()"><a routerLink="login">Login</a></li>
         <li><a class="nav-link" style="cursor:pointer" *ngIf="authService.loggedIn()" (click)="authService.logoutUser()">Logout</a></li>
       </ul>

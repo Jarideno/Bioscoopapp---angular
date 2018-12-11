@@ -41,15 +41,19 @@ export class ShowsService {
         ));
     }
 
-    postShows() {
-    
+    postShows(movie: string, date: string, roomNumber: number, movieId: string, roomId: string) {
+      let show = new Show(movie, date, roomNumber);
+      const headers = new Headers({'Content-Type': 'application/json'});
+      return this.http.post(`http://localhost:3000/api/show/movie/${movieId}/room/${roomId}`, show, {headers: headers});
     }
 
-    putShows() {
-        
+    putShows(movie: string, date: string, showId: string) {
+      let show = new Show(movie, date);
+      const headers = new Headers({'Content-Type': 'application/json'});
+      return this.http.put(`http://localhost:3000/api/show/${showId}`, show, {headers: headers});
     }
 
-    deleteShow(){
-      
+    deleteShow(movieId: string, showId: string, roomId: string){
+      return this.http.delete(`http://localhost:3000/api/show/${showId}/movie/${movieId}/room/${roomId}`);
     }
 }
