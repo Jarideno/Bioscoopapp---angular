@@ -9,7 +9,8 @@
       <app-rooms-item
         *ngFor="let roomEl of rooms; let i = index"
         [room]="roomEl"
-        [index]="i">
+        [index]="i"
+        (click)="showRoomDetails(i)">
       </app-rooms-item>
     </div>
   </div>

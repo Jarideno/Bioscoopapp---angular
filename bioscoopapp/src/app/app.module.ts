@@ -20,6 +20,7 @@ import { RoomsListComponent } from './rooms/rooms-list/rooms-list.component';
 import { RoomsNewComponent } from './rooms/rooms-new/rooms-new.component';
 import { RoomsItemComponent } from './rooms/rooms-list/rooms-item/rooms-item.component';
 import { MoviesDetailsComponent } from './movies/movies-details/movies-details.component';
+import { RoomsDetailsComponent } from './rooms/rooms-details/rooms-details.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { MoviesDetailsComponent } from './movies/movies-details/movies-details.c
     RoomsListComponent,
     RoomsNewComponent,
     RoomsItemComponent,
-    MoviesDetailsComponent
+    MoviesDetailsComponent,
+    RoomsDetailsComponent
   ],
   imports: [
     BrowserModule,

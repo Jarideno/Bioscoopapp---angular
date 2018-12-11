@@ -1,0 +1,17 @@
+<span
+  style="cursor: pointer;"
+  [routerLink]="[index]"
+  routerLinkActive="active"
+  class="list-group-item clearfix">
+    <p class="bold">Room number: </p>
+    <p class="list-group-item-text">{{ room?.roomNumber }}</p>
+    <p class="bold">Seats: </p>
+    <p class="list-group-item-text">{{ room?.seats }}</p>
+    <p class="bold">Shows:</p>
+    <ul>
+    <li class="list-group-item-text"
+    *ngFor="let showEl of room?.shows; let i = index">
+    Movie: {{showEl.movie}}, Date: {{showEl.date}}
+    </li>
+    </ul>
+</span>

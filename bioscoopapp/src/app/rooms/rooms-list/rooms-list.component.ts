@@ -29,4 +29,8 @@ export class RoomsListComponent implements OnInit {
     this.router.navigate(['rooms/new']);
   }
 
+  showRoomDetails(index: number){
+    this.router.navigateByUrl('rooms/details/' + this.rooms[index]._id);
+  }
+
 }

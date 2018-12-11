@@ -11,6 +11,7 @@ import { RoomsNewComponent } from './rooms/rooms-new/rooms-new.component';
 import { RoomsEditComponent } from './rooms/rooms-edit/rooms-edit.component';
 import { RoomsDeleteComponent } from './rooms/rooms-delete/rooms-delete.component';
 import { MoviesDetailsComponent } from './movies/movies-details/movies-details.component';
+import { RoomsDetailsComponent } from './rooms/rooms-details/rooms-details.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -22,7 +23,8 @@ const appRoutes: Routes = [
   { path: 'rooms', component: RoomsComponent},
   { path: 'rooms/new', component: RoomsNewComponent},
   { path: 'rooms/edit/:id', component: RoomsEditComponent},
-  { path: 'rooms/delete/:id', component: RoomsDeleteComponent}
+  { path: 'rooms/delete/:id', component: RoomsDeleteComponent},
+  { path: 'rooms/details/:id', component: RoomsDetailsComponent}
 ];
 
 @NgModule({
