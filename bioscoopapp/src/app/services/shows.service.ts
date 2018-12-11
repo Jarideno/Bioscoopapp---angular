@@ -12,7 +12,7 @@ export class ShowsService {
     constructor(private http: Http){}
 
     getShows() {
-        return this.http.get('http://localhost:3000/api/show')
+        return this.http.get('https://bioscoopapp-nodejs.herokuapp.com/api/show')
           .pipe(map(
             (response: Response) => {
               const data = response.json();
@@ -27,7 +27,7 @@ export class ShowsService {
     }
 
     getShowById(id: number){
-      return this.http.get('http://localhost:3000/api/show/' + id)
+      return this.http.get('https://bioscoopapp-nodejs.herokuapp.com/api/show/' + id)
           .pipe(map(
             (response: Response) => {
               const data = response.json();
@@ -44,16 +44,16 @@ export class ShowsService {
     postShows(movie: string, date: string, roomNumber: number, movieId: string, roomId: string) {
       let show = new Show(movie, date, roomNumber);
       const headers = new Headers({'Content-Type': 'application/json'});
-      return this.http.post(`http://localhost:3000/api/show/movie/${movieId}/room/${roomId}`, show, {headers: headers});
+      return this.http.post(`https://bioscoopapp-nodejs.herokuapp.com/api/show/movie/${movieId}/room/${roomId}`, show, {headers: headers});
     }
 
     putShows(movie: string, date: string, showId: string) {
       let show = new Show(movie, date);
       const headers = new Headers({'Content-Type': 'application/json'});
-      return this.http.put(`http://localhost:3000/api/show/${showId}`, show, {headers: headers});
+      return this.http.put(`https://bioscoopapp-nodejs.herokuapp.com/api/show/${showId}`, show, {headers: headers});
     }
 
     deleteShow(movieId: string, showId: string, roomId: string){
-      return this.http.delete(`http://localhost:3000/api/show/${showId}/movie/${movieId}/room/${roomId}`);
+      return this.http.delete(`https://bioscoopapp-nodejs.herokuapp.com/api/show/${showId}/movie/${movieId}/room/${roomId}`);
     }
 }

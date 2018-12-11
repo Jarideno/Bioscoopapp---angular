@@ -12,7 +12,7 @@ export class RoomsService {
     constructor(private http: Http){}
 
     getRooms() {
-        return this.http.get('http://localhost:3000/api/room')
+        return this.http.get('https://bioscoopapp-nodejs.herokuapp.com/api/room')
           .pipe(map(
             (response: Response) => {
               const data = response.json();
@@ -27,7 +27,7 @@ export class RoomsService {
     }
 
     getRoomById(id: number){
-      return this.http.get('http://localhost:3000/api/room/' + id)
+      return this.http.get('https://bioscoopapp-nodejs.herokuapp.com/api/room/' + id)
           .pipe(map(
             (response: Response) => {
               const data = response.json();
@@ -42,7 +42,7 @@ export class RoomsService {
     }
 
     getRoomByNumber(roomNumber: number){
-      return this.http.get('http://localhost:3000/api/room/number/' + roomNumber)
+      return this.http.get('https://bioscoopapp-nodejs.herokuapp.com/api/room/number/' + roomNumber)
           .pipe(map(
             (response: Response) => {
               const data = response.json();
@@ -59,18 +59,18 @@ export class RoomsService {
     postRooms(roomNumber: number, seats: number) {
     let room = new Room(roomNumber, seats);
     const headers = new Headers({'Content-Type': 'application/json'});
-    return this.http.post('http://localhost:3000/api/room', room, {headers: headers});
+    return this.http.post('https://bioscoopapp-nodejs.herokuapp.com/api/room', room, {headers: headers});
     }
 
     putRooms(roomNumber: number, seats: number, id: string) {
         let room = new Room(roomNumber, seats);
         const headers = new Headers({'Content-Type': 'application/json'});
         console.log(id);
-        return this.http.put('http://localhost:3000/api/room/' + id, room, {headers: headers});
+        return this.http.put('https://bioscoopapp-nodejs.herokuapp.com/api/room/' + id, room, {headers: headers});
     }
 
     deleteRoom(id: string){
       console.log(id);
-      return this.http.delete('http://localhost:3000/api/room/' + id);
+      return this.http.delete('https://bioscoopapp-nodejs.herokuapp.com/api/room/' + id);
     }
 }
