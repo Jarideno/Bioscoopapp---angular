@@ -26,6 +26,21 @@ export class MoviesService {
         ));
     }
 
+    getMovieById(id: number){
+      return this.http.get('http://localhost:3000/api/movie/' + id)
+          .pipe(map(
+            (response: Response) => {
+              const data = response.json();
+              return data;
+            }
+          )
+          ,catchError(
+            (error: Response) => {
+              return Observable.throw('Something went wrong');
+            }
+        ));
+    }
+
     postMovies(title: string, description: string, director: string, writers: string, imdbScore: number, length: number) {
     let movie = new Movie(title, description, director, writers, imdbScore, length);
     const headers = new Headers({'Content-Type': 'application/json'});

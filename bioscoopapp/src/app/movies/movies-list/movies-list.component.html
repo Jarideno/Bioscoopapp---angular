@@ -9,7 +9,8 @@
     <app-movies-item
       *ngFor="let movieEl of movies; let i = index"
       [movie]="movieEl"
-      [index]="i">
+      [index]="i"
+      (click)="showMovieDetails(i)">
     </app-movies-item>
   </div>
 </div>

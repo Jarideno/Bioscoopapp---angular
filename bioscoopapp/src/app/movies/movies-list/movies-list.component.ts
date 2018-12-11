@@ -28,4 +28,8 @@ export class MoviesListComponent implements OnInit {
     console.log('OnNewMovie() method called!');
     this.router.navigate(['movies/new']);
   }
+
+  showMovieDetails(index: number){
+    this.router.navigateByUrl('movies/details/' + this.movies[index]._id);
+  }
 }

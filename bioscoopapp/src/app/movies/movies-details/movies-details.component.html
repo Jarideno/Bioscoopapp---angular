@@ -1,0 +1,24 @@
+<span
+  [routerLink]="[index]"
+  routerLinkActive="active"
+  class="list-group-item clearfix">
+    <h4 class="list-group-item-heading">{{ movie?.title }}</h4>
+    <p class="bold">Description: </p>
+    <p class="list-group-item-text">{{ movie?.description }}</p>
+    <p class="bold">Director: </p>
+    <p class="list-group-item-text">{{ movie?.director }}</p>
+    <p class="bold">Writers: </p>
+    <p class="list-group-item-text">{{ movie?.writers }}</p> 
+    <p class="bold">Imdb score: </p>
+    <p class="list-group-item-text">{{ movie?.imdbScore }}</p>
+    <p class="bold">Movie length: </p>
+    <p class="list-group-item-text">{{ movie?.length }} minutes</p>
+    <p class="bold">Shows:</p>
+    <ul>
+    <li class="list-group-item-text"
+    *ngFor="let showEl of movie?.shows; let i = index">
+    Movie: {{showEl.movie}}, Date: {{showEl.date}}, Room: {{showEl.room}}
+    </li>
+    </ul>
+</span>
+

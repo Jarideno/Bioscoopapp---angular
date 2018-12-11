@@ -19,6 +19,7 @@ import { RoomsEditComponent } from './rooms/rooms-edit/rooms-edit.component';
 import { RoomsListComponent } from './rooms/rooms-list/rooms-list.component';
 import { RoomsNewComponent } from './rooms/rooms-new/rooms-new.component';
 import { RoomsItemComponent } from './rooms/rooms-list/rooms-item/rooms-item.component';
+import { MoviesDetailsComponent } from './movies/movies-details/movies-details.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { RoomsItemComponent } from './rooms/rooms-list/rooms-item/rooms-item.com
     RoomsEditComponent,
     RoomsListComponent,
     RoomsNewComponent,
-    RoomsItemComponent
+    RoomsItemComponent,
+    MoviesDetailsComponent
   ],
   imports: [
     BrowserModule,

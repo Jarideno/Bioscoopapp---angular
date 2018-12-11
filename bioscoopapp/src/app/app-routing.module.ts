@@ -10,6 +10,7 @@ import { RoomsComponent } from './rooms/rooms.component';
 import { RoomsNewComponent } from './rooms/rooms-new/rooms-new.component';
 import { RoomsEditComponent } from './rooms/rooms-edit/rooms-edit.component';
 import { RoomsDeleteComponent } from './rooms/rooms-delete/rooms-delete.component';
+import { MoviesDetailsComponent } from './movies/movies-details/movies-details.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
   { path: 'movies/new', component: MoviesNewComponent},
   { path: 'movies/edit/:id', component: MoviesEditComponent},
   { path: 'movies/delete/:id', component: MoviesDeleteComponent},
+  { path: 'movies/details/:id', component: MoviesDetailsComponent},
   { path: 'rooms', component: RoomsComponent},
   { path: 'rooms/new', component: RoomsNewComponent},
   { path: 'rooms/edit/:id', component: RoomsEditComponent},
