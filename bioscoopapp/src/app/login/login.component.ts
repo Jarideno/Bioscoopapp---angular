@@ -9,7 +9,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  loginUserData = {}
+  model: any = {};
 
   constructor(private _auth: AuthService,
               private _router: Router) { }
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser () {
-    this._auth.loginUser(this.loginUserData)
+    this._auth.loginUser(this.model)
     .subscribe(
       res => {
         localStorage.setItem('token', res.token)
