@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "engines": {
     "node": "8.11.1",
-    "npm": "5.6.0npm install enhanced-resolve@3.3.0 --save-dev"
+    "npm": "5.6.0"
   },
   "scripts": {
     "start": "node server.js",
@@ -40,7 +40,8 @@
     "rxjs-compat": "^6.3.3",
     "tslib": "^1.9.0",
     "typescript": "~3.1.6",
-    "zone.js": "~0.8.26"
+    "zone.js": "~0.8.26",
+    "enhanced-resolve": "^3.3.0"
   },
   "devDependencies": {
     "@angular/language-service": "~7.1.0",
