@@ -2,11 +2,12 @@
   "name": "bioscoopapp",
   "version": "0.0.0",
   "engines": {
-    "node": "8.11.1"
+    "node": "8.11.1",
+    "npm": "5.6.0npm install enhanced-resolve@3.3.0 --save-dev"
   },
   "scripts": {
     "start": "node server.js",
-    "postinstall": "ng build --prod ",
+    "postinstall": "ng build --aot -prod",
     "ng": "ng",
     "build": "ng build",
     "test": "ng test",
