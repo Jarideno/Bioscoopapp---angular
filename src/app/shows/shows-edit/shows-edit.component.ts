@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ShowsService } from 'src/app/services/shows.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Show } from '../../../shared/show.model';
 
 @Component({
   selector: 'app-shows-edit',
@@ -10,10 +11,18 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class ShowsEditComponent implements OnInit {
 
   model: any =  {};
+  show: Show;
 
   constructor(private showsService: ShowsService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.showsService.getShowById(this.route.snapshot.params.id)
+    .subscribe((show: Show) => this.show = show,
+    (error) => console.log(error), () => {
+      this.model["movie"] = this.show.movie;
+      this.model["date"] = this.show.date;
+      this.model["room"] = this.show.room;
+    });
   }
 
   onShowEdit(){

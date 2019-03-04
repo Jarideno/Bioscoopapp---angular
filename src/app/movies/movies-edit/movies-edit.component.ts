@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Movie } from '../../../shared/movie.model';
 
 @Component({
   selector: 'app-movies-edit',
@@ -10,10 +11,21 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class MoviesEditComponent implements OnInit {
 
   model: any =  {};
+  movie: Movie;
 
   constructor(private moviesService: MoviesService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.moviesService.getMovieById(this.route.snapshot.params.id)
+    .subscribe((movie: Movie) => this.movie = movie,
+    (error) => console.log(error), () => {
+      this.model["title"] = this.movie.title;
+      this.model["description"] = this.movie.description;
+      this.model["director"] = this.movie.director;
+      this.model["writers"] = this.movie.writers;
+      this.model["imdbScore"] = this.movie.imdbScore;
+      this.model["length"] = this.movie.length;
+    });
   }
 
   onMovieEdit(){
@@ -29,3 +41,4 @@ export class MoviesEditComponent implements OnInit {
       });
   }
 }
+

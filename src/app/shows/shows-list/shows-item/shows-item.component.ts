@@ -22,7 +22,7 @@ export class ShowsItemComponent implements OnInit {
     this.router.navigateByUrl('shows/edit/' + this.show._id);
   }
 
-  onDeleteShow(){
+  onDeleteShow(test: any){
     this.router.navigateByUrl(`shows/delete/${this.show._id}/${this.show.movie}/${this.show.room}`);
   }
 
