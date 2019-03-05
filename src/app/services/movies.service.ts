@@ -42,7 +42,7 @@ export class MoviesService {
     }
 
     getMovieByTitle(movieTitle: string){
-      return this.http.get('https://bioscoopapp-nodejs.herokuapp.com/api/movie/' + movieTitle)
+      return this.http.get('https://bioscoopapp-nodejs.herokuapp.com/api/movie?title=' + movieTitle)
           .pipe(map(
             (response: Response) => {
               const data = response.json();

@@ -42,7 +42,7 @@ export class RoomsService {
     }
 
     getRoomByNumber(roomNumber: number){
-      return this.http.get('https://bioscoopapp-nodejs.herokuapp.com/api/room/number/' + roomNumber)
+      return this.http.get('https://bioscoopapp-nodejs.herokuapp.com/api/room?room=' + roomNumber)
           .pipe(map(
             (response: Response) => {
               const data = response.json();
