@@ -13,7 +13,7 @@
             </div>
             <div class="form-group">
               <label for="exampleInputSeats">Seats</label>
-              <input type="text" class="form-control" id="exampleInputSeats" placeholder="Seats" [(ngModel)]="model.seats" #seats="ngModel" name="seats" required>
+              <input type="number" class="form-control" id="exampleInputSeats" placeholder="Seats" [(ngModel)]="model.seats" #seats="ngModel" name="seats" required>
               <div *ngIf="seats.invalid && (seats.dirty || seats.touched)"
                 class="alert alert-danger">
               <div *ngIf="seats.errors.required">

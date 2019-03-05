@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, Output, Input } from '@angular/core';
 import { ShowsService } from 'src/app/services/shows.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MoviesService } from 'src/app/services/movies.service';
 import { RoomsService } from 'src/app/services/rooms.service';
 import { Movie } from 'src/shared/movie.model';
 import { Room } from 'src/shared/room.model';
+import { Show } from '../../../shared/show.model';
 
 @Component({
   selector: 'app-shows-new',
@@ -21,6 +22,7 @@ export class ShowsNewComponent implements OnInit {
     private roomsService: RoomsService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    
   }
 
   onShowCreate(){
