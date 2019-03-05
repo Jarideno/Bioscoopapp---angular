@@ -20,15 +20,15 @@ export class AuthService {
   }
 
   logoutUser() {
-    localStorage.removeItem('token')
+    sessionStorage.removeItem('token')
     this._router.navigateByUrl('login')
   }
 
   getToken() {
-    return localStorage.getItem('token')
+    return sessionStorage.getItem('token')
   }
 
   loggedIn() {
-    return !!localStorage.getItem('token')    
+    return !!sessionStorage.getItem('token')    
   }
 }
