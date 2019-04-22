@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "postinstall": "ng build --aot --target=production",
+    "postinstall": "ng build --aot --prod",
     "ng": "ng",
     "build": "ng build",
     "test": "ng test",
