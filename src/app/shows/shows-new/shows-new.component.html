@@ -2,17 +2,14 @@
   <div class="col-md-6 col-md-push-3">
       <form name="form" #createShowForm="ngForm" (ngSubmit)="onShowCreate()">
           <div class="form-group">
-            <label for="exampleMovieInput1">Movie title</label>
-            <input type="text" class="form-control" id="exampleMovieInput1" placeholder="Movie title" [(ngModel)]="model.movie" #showMovie="ngModel" name="showMovie" required minlength="4">
-            <div *ngIf="showMovie.invalid && (showMovie.dirty || showMovie.touched)"
-              class="alert alert-danger">
-            <div *ngIf="showMovie.errors.required">
-              Movie title is required.
-            </div>
-            <div *ngIf="showMovie.errors.minlength">
-              Movie title must be at least 4 characters long.
-            </div>
-          </div>
+              <label for="exampleMovieInput1">Movie title</label>
+              <br/>
+              <select (change)="selectChangeHandler($event)" ng-options="option.value as option.name for option in typeOptions"> 
+                <option style="display:none" value="">Select a movie</option>
+                <option *ngFor="let val of movienames">
+                  {{val}}
+                </option>
+              </select>
           </div>
           <div class="form-group">
             <label for="exampleInputDate">Date</label>
@@ -26,13 +23,13 @@
           </div>
           <div class="form-group">
             <label for="exampleInputRoom">Room</label>
-            <input type="text" class="form-control" id="exampleInputRoom" placeholder="Room" [(ngModel)]="model.room" #room="ngModel" name="room" required>
-            <div *ngIf="room.invalid && (room.dirty || room.touched)"
-              class="alert alert-danger">
-            <div *ngIf="room.errors.required">
-              Room is required.
-            </div>
-          </div>
+            <br/>
+            <select (change)="selectChangeHandler2($event)" ng-options="option.value as option.name for option in typeOptions"> 
+                <option style="display:none" value="">Select a room</option>
+                <option *ngFor="let val of roomnames">
+                  {{val}}
+                </option>
+              </select>
           </div>
           <button class="btn btn-primary">Submit</button>
         </form>

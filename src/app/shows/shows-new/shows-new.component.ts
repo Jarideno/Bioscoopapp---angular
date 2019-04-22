@@ -17,30 +17,67 @@ export class ShowsNewComponent implements OnInit {
   roomId: string;
   movieId: string;
   model: any = {};
+  movies: Movie [] = [];
+  movienames: String [] = [];
+  selectedName: string = '';
+  rooms: Room [] = [];
+  roomnames: Number [] = [];
+  selectedRoom: number;
+
+  selectChangeHandler (event: any){
+    this.selectedName = event.target.value;
+  }
+
+  selectChangeHandler2 (event: any){
+    this.selectedRoom = event.target.value;
+  }
 
   constructor(private showsService: ShowsService, private moviesService: MoviesService,
     private roomsService: RoomsService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    
+    this.moviesService.getMovies()
+    .subscribe(
+      (movies: any[]) => this.movies = movies,
+      (error) => console.log(error),
+      () => {
+        this.movies.forEach(element => {
+          console.log(element.title);
+          this.movienames.push(element.title);
+        });
+      }
+    )
+
+    this.roomsService.getRooms()
+    .subscribe(
+      (rooms: any[]) => this.rooms = rooms,
+      (error) => console.log(error),
+      () => {
+        this.rooms.forEach(element => {
+          console.log(element.roomNumber);
+          this.roomnames.push(element.roomNumber);
+        });
+      }
+    )
   }
 
   onShowCreate(){
-    this.moviesService.getMovieByTitle(this.model.movie)
+    console.log(this.selectedName);
+    this.moviesService.getMovieByTitle(this.selectedName)
       .subscribe(
         (movie: Movie) => this.movieId = movie._id,
         (error) => console.log(error),
         () => {
           console.log(this.movieId);
 
-          this.roomsService.getRoomByNumber(this.model.room)
+          this.roomsService.getRoomByNumber(this.selectedRoom)
             .subscribe(
               (room: Room) => this.roomId = room._id,
               (error) => console.log(error),
               () => {
                 console.log(this.roomId);
 
-                this.showsService.postShows(this.model.movie, this.model.date, this.model.number, this.movieId, this.roomId)
+                this.showsService.postShows(this.selectedName, this.model.date, this.model.number, this.movieId, this.roomId)
                   .subscribe(
                     (response) => console.log(response), (error) => console.log(error), () => {
                     this.router.navigate(["shows"]);
@@ -49,5 +86,7 @@ export class ShowsNewComponent implements OnInit {
             )
         }
       )}
+
+      
 }
 
